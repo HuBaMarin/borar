@@ -1,8 +1,12 @@
 export class Hamburguesas {
-    constructor(nombre = []) {
+    constructor(nombre) {
         this.nombresArray = nombre;
     }
 
+    getNombreHam(){
+        return this.nombresArray;
+    }
+    
     mostrarHams() {
         let mostrar = document.getElementById("mostrarHams");
         mostrar.addEventListener("click", funcion, false);
