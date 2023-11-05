@@ -2,7 +2,8 @@ import { Hamburguesas } from "./Hamburguesas.js";
 import { Ingredientes } from "./Ingredientes.js";
 
 
-const hamburguesa= ["Clásica","Vegana","Mexicana","Barbacoa","Pollo"];
+const hamburguesa= ["Clásica"];
+//,"Vegana","Mexicana","Barbacoa","Pollo"
 const ingredsClásica = [
     { nombre: "Apple", price: 0.99 },
     { nombre: "Banana", price: 1.29 },
@@ -23,7 +24,12 @@ const ingredsClásica = [
     { nombre: "Banana", price: 1.29 },
     { nombre: "Orange", price: 1.99 }
   ];
-/*
+  const ingredsClásica5 = [
+    { nombre: "Apple", price: 0.99 },
+    { nombre: "Banana", price: 1.29 },
+    { nombre: "Orange", price: 1.99 }
+  ];
+
 // Create an array of objects with name and price properties
 var products = [
   { name: "Apple", price: 0.99 },

@@ -2,7 +2,7 @@ import {Hamburguesas} from "./Hamburguesas.js";
 
 class Ingredientes extends Hamburguesas {
 
-    constructor(nHam= [], nIngreds= [], precio) {
+    constructor(nHam, nIngreds= [], precio) {
         super(nHam);
         this.nomHam = nHam; 
         this.nIngr = nIngreds;
@@ -33,16 +33,6 @@ class Ingredientes extends Hamburguesas {
 
     }
 
-    mostrarIngreds() {
-        
-         let mostrar = document.getElementById("mostrarIngreds");
-        mostrar.addEventListener("click", funcion, false);
-        mostrar.nombre = this.nIngr;
 
-        function funcion(params) {
-            document.getElementById("textoIngr").innerHTML = params.currentTarget.nombre;
-        }
-        
-    }
 }
 export {Ingredientes};
