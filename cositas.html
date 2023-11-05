@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+        function sust(text) {
+
+            let letr = text.split(" ");
+
+            let separado = letr.map(function (params) {
+                return '"' + params + '"';
+            }).join(", ");
+
+            return separado;
+
+
+
+
+        }
+
+        console.log(sust("pollo salsa_chipotle sal tomate jengibre vinagreta_sidra azúcar chile rama_de_cilantro"));
+
+    </script>
+</body>
+
+</html>
