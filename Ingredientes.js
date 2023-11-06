@@ -18,11 +18,10 @@ class Ingredientes extends Hamburguesas {
     mostrarIngreds() {
 
         const resultado = document.getElementById("resultado");
-        resultado.innerHTML += "<p>"+this.nomHam+"</p>";
-        resultado.innerHTML += "<p>"+this.nIngr.join(", ")+"</p>";
-        resultado.innerHTML += "<p>"+this.precio.join(", ")+"</p>";
-        resultado.innerHTML += "<br>";
-     
+        resultado.innerHTML += "<p>" + this.nomHam + "</p>";
+        resultado.innerHTML += "<p>" + this.nIngr.join(", ") + "</p>";
+        resultado.innerHTML += "<p>" + this.precio.join(", ") + "</p>";
+
     }
 
     anadir() {
@@ -43,26 +42,30 @@ class Ingredientes extends Hamburguesas {
     }
 
 
-    anadirIngredientes() {
-        let mos2 = document.getElementById("anIngreds");
-        mos2.addEventListener("click", funcion, false);
-        mos2.ingreds = this.nIngr;
-        function funcion(params) {
-            let nuevoNom = prompt("dime nombre ingr poner");
-            params.currentTarget.ingreds.push(nuevoNom);
-        }
-    }
+    /* anadirIngredientes() {
+         let mos2 = document.getElementById("anIngreds");
+         mos2.addEventListener("click", funcion, false);
+       
+         function funcion(params) {
+             let nuevoNom = prompt("dime nombre ham poner");
+             let nuevoIngred = prompt("dime nuevos ingredientes");
+             let nuevoPrecio = prompt("dime nuevos precios");
+            
+         }
+     }*/
 
     elimIngreds() {
         let elim = document.getElementById("elIngr");
         elim.addEventListener("click", funcion, false);
-        elim.nombres = this.nIngr;
+        elim.ingreds = this.nIngr;
+        elim.nombre = this.nHam;
+        elim.precio= this.precio;
         function funcion(params) {
-            let nuevoNom = prompt("nom ingr");
-            if (params.currentTarget.nombres.includes(nuevoNom))
-                params.currentTarget.nombres.splice(params.currentTarget.nombres.indexOf(nuevoNom), 1);
 
-
+            let nomElimin = prompt("pos nom ingr");
+            if (params.currentTarget.ingreds.includes(nomElimin))
+                params.currentTarget.ingreds.splice(nomElimin, 1);/*elimino ingrediente que selecciona usuario*/
+                params.currentTarget.precio.splice(precio,1);
         }
 
     }

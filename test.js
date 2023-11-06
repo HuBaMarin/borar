@@ -10,14 +10,22 @@ const hambs = [
 ];
 
 
-const displayButton = document.getElementById("botonMostrar");
-  displayButton.addEventListener("click", () => {
+const botonMostrar = document.getElementById("botonMostrar");
+  botonMostrar.addEventListener("click", () => {
     const resultado = document.getElementById("resultado");
     resultado.innerHTML = "";
     hambs.forEach(hamburguesa => hamburguesa.mostrarIngreds());
   });
 
-hambs.forEach(hamburguesa => hamburguesa.anadir());
-hambs.forEach(hamburguesa => hamburguesa.quitar());
+const botonAnadir = document.getElementById("anadirHamburguesa");
+botonAnadir.addEventListener("click",() => {
+  const resultado = document.getElementById("resultado");
+  resultado.innerHTML = "";
+
+  hambs.forEach(hamburguesa => hamburguesa.elimIngreds());
+});
+
+
+/*hambs.forEach(hamburguesa => hamburguesa.elimIngreds());
 hambs.forEach(hamburguesa => hamburguesa.muestroTotal());
-hambs.forEach(hamburguesa => hamburguesa.elimIngreds());
+hambs.forEach(hamburguesa => hamburguesa.elimIngreds());*/
