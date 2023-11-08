@@ -10,10 +10,10 @@ const hambs = [
 ];
 
 const bebs = [
-new Bebidas("Cocacola",2.5),
-new Bebidas("Agua",1),
-new Bebidas("Fanta de naranja",2),
-new Bebidas("Fanta de limón",2)
+  new Bebidas("Cocacola", 2.5),
+  new Bebidas("Agua", 1),
+  new Bebidas("Fanta de naranja", 2),
+  new Bebidas("Fanta de limón", 2)
 ];
 
 const botonMostrar = document.getElementById("botonMostrar");
@@ -25,8 +25,9 @@ botonMostrar.addEventListener("click", () => {
   } else {
     resultado.style.display = "none";
   }
-  let ingreds = new Ingredientes();
-  ingreds.mostrarIngreds();
+  
+  let pos = prompt("0-C 1-V 2-P 3-B")
+  hambs[pos].mostrarIngredsSelec();
 });
 
 const botonPrecio = document.getElementById("btnPrecio");

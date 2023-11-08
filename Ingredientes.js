@@ -15,39 +15,15 @@ class Ingredientes extends Hamburguesas {
         this.sum = 0;
     }
 
-    mIngreds(){
+    mostrarIngredsSelec() {
+        const resultado = document.getElementById("txtMostrar");
+
+        resultado.innerHTML += this.nIngr;
+
 
     }
 
-     mostrarIngreds() {
 
-        
-const resultado = document.getElementById("txtMostrar");
-
-        let pos = prompt("0-Clásica 1-Vegana 2-Pollo 3-Barbacoa");
-       
-        switch (pos) {//ingredientes por hamburguesa
-            case "0":
-                resultado.innerHTML+="Ingredientes";
-                resultado.innerHTML += this._+"<br>";
-                break;
-            case "1":
-                resultado.innerHTML+="Ingredientes";
-                resultado.innerHTML += this.nIngr[pos]+"<br>";
-            case "2":
-                resultado.innerHTML+="Ingredientes";
-                resultado.innerHTML += this.nIngr[pos]+"<br>";
-            case "3":
-                resultado.innerHTML+="Ingredientes";
-                resultado.innerHTML += this.nIngr[pos]+"<br>";
-            default:
-                alert("Hamburguesa no encontrada");
-                break;
-        }
-
-    }
-
-     
 
     anadirHamburguesas() {
         this.btnPon.addEventListener("click", () => {
@@ -97,13 +73,6 @@ const resultado = document.getElementById("txtMostrar");
 
     }
 
-
-    ingredsPorSelec() {
-        let texto = prompt("(0)-Clásica (1)-Vegana (2)-Pollo (3)-Barbacoa");
-        if (this.nomHam.indexOf(texto)) {
-            return this.nIngr[texto];
-        }
-    }
     muestroTotal() {
         const resultado = document.getElementById("txtMostrar");
 
