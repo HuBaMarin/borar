@@ -15,15 +15,39 @@ class Ingredientes extends Hamburguesas {
         this.sum = 0;
     }
 
-    mostrarIngreds() {
-
-        const resultado = document.getElementById("txtMostrar");
-
-        resultado.innerHTML += "<p>" + this.nomHam + "</p>";
-        resultado.innerHTML += "<p>" + this.nIngr.join(", ") + "</p>";
-        resultado.innerHTML += "<p>" + this.precio.join(", ") + "</p>";
+    mIngreds(){
 
     }
+
+     mostrarIngreds() {
+
+        
+const resultado = document.getElementById("txtMostrar");
+
+        let pos = prompt("0-Clásica 1-Vegana 2-Pollo 3-Barbacoa");
+       
+        switch (pos) {//ingredientes por hamburguesa
+            case "0":
+                resultado.innerHTML+="Ingredientes";
+                resultado.innerHTML += this._+"<br>";
+                break;
+            case "1":
+                resultado.innerHTML+="Ingredientes";
+                resultado.innerHTML += this.nIngr[pos]+"<br>";
+            case "2":
+                resultado.innerHTML+="Ingredientes";
+                resultado.innerHTML += this.nIngr[pos]+"<br>";
+            case "3":
+                resultado.innerHTML+="Ingredientes";
+                resultado.innerHTML += this.nIngr[pos]+"<br>";
+            default:
+                alert("Hamburguesa no encontrada");
+                break;
+        }
+
+    }
+
+     
 
     anadirHamburguesas() {
         this.btnPon.addEventListener("click", () => {
@@ -60,7 +84,7 @@ class Ingredientes extends Hamburguesas {
         let elim = document.getElementById("elIngr");
         elim.addEventListener("click", funcion, false);
         elim.ingreds = this.nIngr;
-        elim.nombre = this.nHam;
+        elim.nombre = this.nomHam;
         elim.precio = this.precio;
         function funcion(params) {
 
@@ -73,15 +97,21 @@ class Ingredientes extends Hamburguesas {
 
     }
 
+
+    ingredsPorSelec() {
+        let texto = prompt("(0)-Clásica (1)-Vegana (2)-Pollo (3)-Barbacoa");
+        if (this.nomHam.indexOf(texto)) {
+            return this.nIngr[texto];
+        }
+    }
     muestroTotal() {
         const resultado = document.getElementById("txtMostrar");
 
         this.sum = this.precio.reduce((acum, valor) => acum + valor);
 
-
-        this.cantidad=prompt("Cuantas "+this.nomHam+" quieres ?");
-        resultado.innerHTML+=this.nomHam+" ";
-        resultado.innerHTML+=(this.sum * this.cantidad).toFixed(2)+" ";
+        this.cantidad = prompt("Cuantas " + this.nomHam + " quieres ?");
+        resultado.innerHTML += this.nomHam + " ";
+        resultado.innerHTML += (this.sum * this.cantidad).toFixed(2) + "<br>";//muestro precio por seleccion
 
     }
 }

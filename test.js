@@ -1,5 +1,5 @@
 import { Ingredientes } from "./Ingredientes.js";
-
+import { Bebidas } from "./Bebidas.js";
 
 //,"Vegana","Barbacoa","Pollo,"Clasica""
 const hambs = [
@@ -10,8 +10,11 @@ const hambs = [
 ];
 
 const bebs = [
-
-]
+new Bebidas("Cocacola",2.5),
+new Bebidas("Agua",1),
+new Bebidas("Fanta de naranja",2),
+new Bebidas("Fanta de limón",2)
+];
 
 const botonMostrar = document.getElementById("botonMostrar");
 botonMostrar.addEventListener("click", () => {
@@ -22,7 +25,8 @@ botonMostrar.addEventListener("click", () => {
   } else {
     resultado.style.display = "none";
   }
-  hambs.forEach(hamburguesa => hamburguesa.mostrarIngreds());
+  let ingreds = new Ingredientes();
+  ingreds.mostrarIngreds();
 });
 
 const botonPrecio = document.getElementById("btnPrecio");
@@ -32,7 +36,3 @@ botonPrecio.addEventListener("click", () => {
   hambs.forEach(hamburguesa => hamburguesa.muestroTotal());
 });
 
-
-/*hambs.forEach(hamburguesa => hamburguesa.elimIngreds());
-hambs.forEach(hamburguesa => hamburguesa.muestroTotal());
-hambs.forEach(hamburguesa => hamburguesa.elimIngreds());*/

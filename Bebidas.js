@@ -4,7 +4,7 @@ class Bebidas extends Hamburguesas {
 
     constructor(nBeb, precio) {
         super(nBeb);
-        this.nBeb = nBeb;
+        this.nomBebs = nBeb;
         this.precio = precio;
 
         this.count = 0;
@@ -61,7 +61,7 @@ class Bebidas extends Hamburguesas {
 
         this.sum =this.precio.reduce((acum, valor) => acum + valor);
 
-        this.cantidad=prompt("Cuantas "+this.nomHam+" quieres ?");
+        this.cantidad=prompt("Cuantas "+this.nomBebs+" quieres ?");
         resultado.innerHTML+=this.nomHam+" ";
         resultado.innerHTML+=(this.sum * this.cantidad).toFixed(2)+" ";
        
