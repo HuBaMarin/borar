@@ -17,21 +17,28 @@ class Ingredientes extends Hamburguesas {
         this.cantidad=0;
     }
 
-    mostrarIngredsSelec() {
+    mostrarIngreds() {
         const resultado = document.getElementById("txtHamburguesas");
 
         this.cantidad = prompt("Cantidad de " + this.nomHam);
-        this.sum = this.precio.reduce((acum, valor) => acum + valor);
 
+        if (this.cantidad!=null) {
+            this.sum = this.precio.reduce((acum, valor) => acum + valor);
 
-        resultado.innerHTML += "Has elegido " + this.cantidad + " hamburguesas tipo " + this.nomHam + "<br>";
-
-        resultado.innerHTML += "Ingredientes " + this.nIngr;
+            resultado.innerHTML += "Has elegido " + this.cantidad + " hamburguesas tipo " + this.nomHam + "<br>";
+    
+            resultado.innerHTML += "Ingredientes " + this.nIngr;
+        }else{
+            resultado.style.display="none";
+        }
+       
     }
 
     verPrecio() {
         if(this.cantidad>0){
-            return this.cantidad*this.sum.toFixed(2);
+            return this.cantidad*this.sum;
+        }else{
+            return 0;
         }
         
 

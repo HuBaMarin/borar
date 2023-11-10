@@ -1,7 +1,7 @@
-class Bebidas  {
+class Patatas  {
 
-    constructor(nBeb, precio) {
-        this.nomBebs = nBeb;
+    constructor(nPtta, precio) {
+        this.nomPtts = nPtta;
         this.precio = precio;
 
         this.sum = 0;
@@ -10,21 +10,19 @@ class Bebidas  {
         this.test = 0;
     }
 
-    mostrarBebidas() {
+    mostrarPatatas() {
 
-        const resultado = document.getElementById("txtMostrarBebs");
+        const resultado = document.getElementById("txtMostrarPttas");
 
-        this.cantidad = prompt("Numero de " + this.nomBebs);
+        this.cantidad = prompt("Numero de " + this.nomPtts);
 
         if (this.cantidad!=null) {
             this.test=this.precio;
 
-            resultado.innerHTML += "Has elegido " + this.cantidad + " " + this.nomBebs;
+            resultado.innerHTML += "Has elegido " + this.cantidad + " " + this.nomPtts;
         }else{
             resultado.style.display="none";
         }
-
-      
 
     }
 
@@ -34,12 +32,7 @@ class Bebidas  {
         }else{
             return 0;
         }
-        
-        
     }
 
 }
-
-
-
-export { Bebidas };
+export {Patatas};
